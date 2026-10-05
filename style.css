@@ -1,0 +1,297 @@
+/* Reset & Fonts */
+:root {
+  --gray: #696969;
+  --nav-gray: #767676;
+  --divider: #D9D9D9;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, figure, blockquote, dl, dd, ul, ol { margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+body {
+  font-family: 'Onest', system-ui, sans-serif;
+  color: var(--black);
+  background-color: var(--white);
+  line-height: 1.2;
+}
+
+@font-face {
+  font-family: 'Geist Pixel Local';
+  src: url('assets/fonts/GeistPixel-Regular-VariableFont_ELSH.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Typography Scale */
+.hero-name {
+  font-family: 'Geist Pixel Local', monospace;
+  font-variation-settings: 'ELSH' 20;
+}
+
+@keyframes name-glitch {
+  0%, 100% { font-variation-settings: 'ELSH' 20; }
+  20% { font-variation-settings: 'ELSH' 40; }
+  40% { font-variation-settings: 'ELSH' 60; }
+  60% { font-variation-settings: 'ELSH' 80; }
+  80% { font-variation-settings: 'ELSH' 1; }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hero-name:hover {
+    animation: name-glitch 2.5s steps(1, end) infinite;
+  }
+}
+
+/* ponytail: approximate Geist Pixel via mono until imported or mapped locally */
+.pixel-mono {
+  font-family: 'Geist Pixel', ui-monospace, monospace;
+  text-transform: uppercase;
+}
+
+.t-lead { font-size: clamp(20px, calc(17px + 0.75vw), 28px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; color: var(--gray); }
+.hero p.t-lead { text-wrap: balance; }
+.t-h1 { font-size: clamp(28px, calc(22px + 1vw), 40px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; }
+.t-h2 { font-size: clamp(18px, calc(16px + 0.3vw), 20px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; }
+.t-card-title { font-size: clamp(16px, calc(13px + 0.45vw), 20px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; }
+.t-body { font-size: 16px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.64; }
+.t-nav { font-size: 12px; letter-spacing: -0.02em; color: var(--nav-gray); }
+.t-metadata { font-size: 10px; font-weight: 400; letter-spacing: -0.02em; text-transform: uppercase; }
+
+/* Layout */
+.container {
+  width: min(1064px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 80px;
+}
+#logo-text {
+  justify-self: start;
+}
+.header-links {
+  justify-self: center;
+}
+.header-social {
+  justify-self: end;
+}
+@media (max-width: 767px) {
+  header .header-social { display: none; }
+}
+.header-links, .header-social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.dot {
+  width: 3px;
+  height: 3px;
+  background-color: var(--divider);
+}
+
+/* Hero Section */
+.hero {
+  margin-bottom: 80px;
+}
+.hero p {
+  max-width: 522px;
+  margin-bottom: 32px;
+}
+.hero strong {
+  font-weight: normal;
+  color: var(--black);
+}
+.current-role {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  color: var(--gray);
+  margin-left: auto;
+  width: fit-content;
+}
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+  }
+  .hero p { margin-bottom: 0; }
+}
+
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+.projects > div,
+.card,
+.card-footer,
+.card-footer h3 { min-width: 0; }
+.projects > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+  }
+}
+
+/* Project Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card-img {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.card-img img {
+  width: 100%;
+  height: auto;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.card-footer .t-metadata {
+  flex-shrink: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+.card-footer h3 { flex: 0 1 65%; }
+
+.view-more {
+  display: block;
+  font-size: clamp(18px, calc(15px + 0.55vw), 24px);
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  margin-bottom: 80px;
+}
+
+/* About Sections */
+.about-section {
+  padding: 160px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.about-section h2 {
+  flex-shrink: 0;
+}
+.about-section p {
+  color: var(--gray);
+  max-width: 522px;
+}
+.about-section p strong {
+  color: var(--black);
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  .about-section {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+  }
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 2;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 80px 0;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-cta p:first-child {
+  font-size: clamp(20px, calc(17px + 0.75vw), 28px);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.footer-cta p:last-child {
+  font-size: clamp(30px, calc(22px + 1.5vw), 44px);
+  text-decoration: underline;
+}
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+footer hr {
+  border: 0;
+  border-top: 1px solid var(--white);
+  margin: 0 0 40px 0;
+}
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.footer-email {
+  font-size: 20px;
+  text-transform: none;
+  word-break: break-word;
+}
+@media (min-width: 768px) {
+  .footer-top, .footer-bottom {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+
+
+
+
+/* Remove huge padding-bottom from about-section since wrappers handle the spacing now */
+
+/* Sobre Gallery */
+@media (max-width: 767px) {
+  .about-gallery {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

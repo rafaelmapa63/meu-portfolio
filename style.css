@@ -870,6 +870,10 @@ footer hr {
   display: block;
 }
 
+.case-meta-logos img.logo-volvo {
+  height: 12px;
+}
+
 .case-summary {
   border-top: 1px solid var(--black);
   padding-top: 20px;

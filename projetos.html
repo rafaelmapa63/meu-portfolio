@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="top">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafael Mapa - Projetos</title>
+  <meta name="description" content="Cases e projetos de design de Rafael Mapa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div id="logo-text" class="pixel-mono" style="font-size:16px; cursor: pointer;" onclick="window.location.href='index.html'">[ MAPA ]</div>
+      <nav class="header-links t-nav pixel-mono">
+        <a href="projetos.html" style="color: var(--black);">projetos</a>
+        <div class="dot"></div>
+        <a href="sobre.html">sobre</a>
+      </nav>
+      <nav class="header-social t-nav pixel-mono">
+        <a href="#" class="cv-link">CURRÍCULO ↗</a>
+        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" class="linkedin-link">linkedin ↗</a>
+      </nav>
+      <button class="hamburger" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <nav class="pixel-mono">
+        <a href="projetos.html">projetos</a>
+        <a href="sobre.html">sobre</a>
+        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank">linkedin ↗</a>
+      </nav>
+    </div>
+
+    <main class="projetos-page">
+      <section class="cases-section" aria-labelledby="cases-title">
+        <h1 class="t-h1 section-title" id="cases-title">Cases</h1>
+        <div class="projects">
+          <div>
+            <a href="porsche.html" class="card">
+              <div class="card-img">
+                <img src="assets/home/porsche.png" alt="Bamaq Porsche - Um sistema visual para cinco páginas">
+              </div>
+              <div class="card-footer">
+                <h3 class="t-card-title">Um sistema visual para cinco páginas</h3>
+                <span class="t-metadata">BAMAQ PORSCHE</span>
+              </div>
+            </a>
+            <a href="lp-volvo.html" class="card">
+              <div class="card-img">
+                <img src="assets/home/volvo.png" alt="Euroville Volvo - 3 páginas, mesma marca, públicos diferentes">
+              </div>
+              <div class="card-footer">
+                <h3 class="t-card-title">3 páginas, mesma marca,<br>públicos diferentes</h3>
+                <span class="t-metadata">EUROVILLE VOLVO</span>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="lopez.html" class="card">
+              <div class="card-img">
+                <img src="assets/home/lopez.png" alt="Lopez Bike Shop - Identidade e e-commerce">
+              </div>
+              <div class="card-footer">
+                <h3 class="t-card-title">Identidade e e-commerce para uma nova presença digital</h3>
+                <span class="t-metadata">LOPEZ BIKE SHOP</span>
+              </div>
+            </a>
+            <a href="mercedes.html" class="card">
+              <div class="card-img">
+                <img src="assets/home/mercedes.png" alt="Bamaq Mercedes-Benz">
+              </div>
+              <div class="card-footer">
+                <h3 class="t-card-title">80% menos tempo para produzir anúncios por mês</h3>
+                <span class="t-metadata">BAMAQ MERCEDES-BENZ</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="other-projects-section" aria-labelledby="other-projects-title">
+        <h2 class="t-h1 section-title" id="other-projects-title">Outros Projetos</h2>
+        <div class="other-projects-grid">
+          
+          <a href="catalogo.html" class="other-card large">
+            <div class="other-card-bg">
+                <img src="assets/projetos/catalogo-volvo.png" alt="Catálogo impresso da Volvo aberto em páginas com modelos de carros" width="4096" height="2731" loading="lazy">
+            </div>
+            <div class="other-card-content">
+              <h3 class="t-card-title" style="color: var(--white); font-size: 20px;">Catálogo de Carros Volvo</h3>
+              <div class="tags">
+                <span class="tag">Impresso</span>
+                <span class="tag">Branding</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="other-projects-row">
+            <a href="captacao.html" class="other-card medium">
+              <div class="other-card-bg">
+                <img src="assets/projetos/captacao.png" alt="Apresentação de captação de patrocínio exibida em um notebook" width="4096" height="2731" loading="lazy">
+              </div>
+              <div class="other-card-content dark">
+                <h3 class="t-card-title" style="font-size: 20px;">Captação<br>de patrocínio</h3>
+                <div class="tags">
+                  <span class="tag dark">Apresentação</span>
+                  <span class="tag dark">Branding</span>
+                </div>
+              </div>
+            </a>
+            <a href="fidcomex.html" class="other-card small">
+              <div class="other-card-bg">
+                <img src="assets/projetos/fidcomex.png" alt="Aplicação da nova identidade FIDCOMEX em contêineres" width="4000" height="3000" loading="lazy">
+              </div>
+              <div class="other-card-content">
+                <h3 class="t-card-title" style="color: var(--white); font-size: 20px;">Rebrand FIDCOMEX</h3>
+                <div class="tags">
+                  <span class="tag">Rebrand</span>
+                  <span class="tag">Branding</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-cta">
+          <p>Se interessou pelo trabalho?</p>
+          <p><a href="https://wa.me/5531984040289" target="_blank" style="color: inherit; text-decoration: none;">Me mande uma mensagem!</a></p>
+        </div>
+        <a href="#top" class="back-to-top pixel-mono">
+          <span>↑</span> VOLTAR PARA O TOPO
+        </a>
+      </div>
+      <hr>
+      <div class="footer-bottom">
+        <a href="#" id="copy-email-btn" class="footer-email pixel-mono" style="position: relative;">
+          rafaelmapa63@gmail.com
+          <span id="email-tooltip" style="position: absolute; bottom: 100%; left: 0; margin-bottom: 8px; background: var(--white); color: var(--black); padding: 4px 8px; border-radius: 2px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s; white-space: nowrap;">Email Copiado</span>
+        </a>
+        <nav class="header-social t-nav pixel-mono">
+          <a href="#">Currículo ↗</a>
+          <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank">linkedin ↗</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

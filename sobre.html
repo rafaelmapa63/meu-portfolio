@@ -15,15 +15,25 @@
     <header>
       <div id="logo-text" class="pixel-mono" style="font-size:16px; cursor: pointer;" onclick="window.location.href='index.html'">[ MAPA ]</div>
       <nav class="header-links t-nav pixel-mono">
-        <a href="index.html">projetos</a>
+        <a href="projetos.html">projetos</a>
         <div class="dot"></div>
         <a href="sobre.html" style="color: var(--black);">sobre</a>
       </nav>
       <nav class="header-social t-nav pixel-mono">
-        <a href="#">Currículo ↗</a>
+        <a href="#" class="cv-link">CURRÍCULO ↗</a>
+        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" class="linkedin-link">linkedin ↗</a>
+      </nav>
+      <button class="hamburger" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <nav class="pixel-mono">
+        <a href="projetos.html">projetos</a>
+        <a href="sobre.html">sobre</a>
         <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank">linkedin ↗</a>
       </nav>
-    </header>
+    </div>
 
     <main>
       <section class="hero">

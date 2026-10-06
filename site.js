@@ -88,3 +88,16 @@ if (copyEmailBtn && emailTooltip) {
     });
   });
 }
+
+
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburgers = document.querySelectorAll('.hamburger');
+  hamburgers.forEach(hamburger => {
+    hamburger.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      hamburger.setAttribute('aria-expanded', String(open));
+      hamburger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    });
+  });
+});

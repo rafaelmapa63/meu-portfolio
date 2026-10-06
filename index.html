@@ -13,17 +13,27 @@
 <body>
   <div class="container">
     <header>
-      <div id="logo-text" class="pixel-mono" style="font-size:16px; cursor: pointer;">[ MAPA ]</div>
+      <div id="logo-text" class="pixel-mono" style="font-size:16px; cursor: pointer;" onclick="window.location.href='index.html'">[ MAPA ]</div>
       <nav class="header-links t-nav pixel-mono">
-        <a href="index.html">projetos</a>
+        <a href="projetos.html">projetos</a>
         <div class="dot"></div>
         <a href="sobre.html">sobre</a>
       </nav>
       <nav class="header-social t-nav pixel-mono">
-        <a href="#">Currículo ↗</a>
+        <a href="#" class="cv-link">CURRÍCULO ↗</a>
+        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" class="linkedin-link">linkedin ↗</a>
+      </nav>
+      <button class="hamburger" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <nav class="pixel-mono">
+        <a href="projetos.html">projetos</a>
+        <a href="sobre.html">sobre</a>
         <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank">linkedin ↗</a>
       </nav>
-    </header>
+    </div>
 
     <main>
       <section class="hero">
@@ -40,7 +50,7 @@
 
       <section class="projects">
         <div>
-          <a href="#" class="card">
+          <a href="porsche.html" class="card">
             <div class="card-img">
               <img src="assets/home/porsche.png" alt="Bamaq Porsche - Um sistema visual para cinco páginas">
             </div>
@@ -49,7 +59,7 @@
               <span class="t-metadata">BAMAQ PORSCHE</span>
             </div>
           </a>
-          <a href="#" class="card">
+          <a href="lp-volvo.html" class="card">
             <div class="card-img">
               <img src="assets/home/volvo.png" alt="Euroville Volvo - 3 páginas, mesma marca, públicos diferentes">
             </div>
@@ -60,7 +70,7 @@
           </a>
         </div>
         <div>
-          <a href="#" class="card">
+          <a href="lopez.html" class="card">
             <div class="card-img">
               <img src="assets/home/lopez.png" alt="Lopez Bike Shop - Identidade e e-commerce">
             </div>
@@ -69,7 +79,7 @@
               <span class="t-metadata">LOPEZ BIKE SHOP</span>
             </div>
           </a>
-          <a href="#" class="card">
+          <a href="mercedes.html" class="card">
             <div class="card-img">
               <img src="assets/home/mercedes.png" alt="Bamaq Mercedes-Benz">
             </div>
@@ -81,7 +91,7 @@
         </div>
       </section>
 
-      <a href="#" class="view-more">Veja mais projetos</a>
+      <a href="projetos.html" class="view-more">Veja mais projetos</a>
 
       <!-- About Section 1 - Replaced with PERFIL.md content instead of the duplicated Cielo placeholder -->
       <section class="about-section">

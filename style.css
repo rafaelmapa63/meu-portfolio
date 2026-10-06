@@ -1151,3 +1151,70 @@ footer hr {
   display: block;
   border-radius: 41px;
 }
+
+/* Navegação entre Cases */
+.case-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  padding-top: 48px;
+  border-top: 1px solid var(--divider);
+}
+
+.case-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+  max-width: 48%;
+}
+
+.case-nav-link:hover {
+  opacity: 0.65;
+}
+
+.case-nav-link.prev {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.case-nav-link.next {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.case-nav-direction {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--nav-gray);
+  line-height: 1.2;
+}
+
+.case-nav-title {
+  font-size: clamp(16px, calc(14px + 0.4vw), 22px);
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+@media (max-width: 600px) {
+  .case-navigation {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    padding-top: 32px;
+    gap: 16px;
+  }
+  .case-nav-direction {
+    font-size: 10px;
+  }
+  .case-nav-title {
+    font-size: 15px;
+  }
+}
+

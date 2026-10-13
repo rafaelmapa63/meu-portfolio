@@ -101,3 +101,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+// Hover preview nos cards de cases (desktop, sem reduced motion)
+(() => {
+  const previews = document.querySelectorAll('.card-img .card-preview');
+  if (!previews.length) return;
+
+  const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!canHover || reducedMotion) return;
+
+  previews.forEach(video => {
+    const frame = video.closest('.card-img');
+    const card = video.closest('.card') || frame;
+    if (!frame || !card) return;
+
+    let active = false;
+
+    const start = () => {
+      active = true;
+      if (video.preload === 'none') video.preload = 'auto';
+      const played = video.play();
+      if (played && typeof played.then === 'function') {
+        played.then(() => {
+          if (active) frame.classList.add('is-previewing');
+        }).catch(() => {});
+      } else if (active) {
+        frame.classList.add('is-previewing');
+      }
+    };
+
+    const stop = () => {
+      active = false;
+      frame.classList.remove('is-previewing');
+      video.pause();
+      try {
+        video.currentTime = 0;
+      } catch (error) {
+        // metadata ainda nao carregou; o proximo hover comeca do inicio
+      }
+    };
+
+    card.addEventListener('mouseenter', start);
+    card.addEventListener('focusin', start);
+    card.addEventListener('mouseleave', stop);
+    card.addEventListener('focusout', stop);
+  });
+})();

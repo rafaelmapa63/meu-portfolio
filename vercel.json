@@ -46,7 +46,7 @@
       ]
     },
     {
-      "source": "/scripts/(?:.*\\.)js$",
+      "source": "/scripts/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

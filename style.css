@@ -1344,3 +1344,20 @@ body.lightbox-open {
     transition: none;
   }
 }
+
+.mercedes-campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+
+.mercedes-campaign-grid img {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .mercedes-campaign-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}

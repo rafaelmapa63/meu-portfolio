@@ -212,9 +212,19 @@ document.addEventListener('DOMContentLoaded', () => {
     origin = img;
     overlayImage.src = img.currentSrc || img.src;
     overlayImage.alt = img.alt;
+    overlay.setAttribute('aria-label', img.alt ? `Imagem ampliada: ${img.alt}` : 'Imagem ampliada');
     overlay.hidden = false;
     document.body.classList.add('lightbox-open');
     closeButton.focus();
+  }
+
+  // Navegacao circular entre as imagens elegiveis
+  function step(delta) {
+    if (!origin || images.length < 2) return;
+    const current = images.indexOf(origin);
+    if (current === -1) return;
+    const next = (current + delta + images.length) % images.length;
+    open(images[next]);
   }
 
   function close() {
@@ -222,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.hidden = true;
     overlayImage.removeAttribute('src');
     overlayImage.alt = '';
+    overlay.setAttribute('aria-label', 'Imagem ampliada');
     document.body.classList.remove('lightbox-open');
     if (origin) origin.focus({ preventScroll: true });
     origin = null;
@@ -247,6 +258,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!overlay || overlay.hidden) return;
     if (event.key === 'Escape') {
       close();
+      return;
+    }
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      step(-1);
+      return;
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      step(1);
       return;
     }
     if (event.key === 'Tab') {

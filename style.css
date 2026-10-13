@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Onest";
+  src: url("assets/fonts/Onest-Variable-Latin.woff2") format("woff2");
+  font-weight: 300 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Reset & Fonts */
 :root {
   --gray: #696969;
@@ -11,6 +19,15 @@
 body, h1, h2, h3, p, figure, blockquote, dl, dd, ul, ol { margin: 0; padding: 0; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #CBF86C;
+  outline-offset: 2px;
+}
 
 body {
   font-family: 'Onest', system-ui, sans-serif;
@@ -61,7 +78,7 @@ body {
 .t-card-title { font-size: clamp(16px, calc(13px + 0.45vw), 20px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; }
 .t-body { font-size: 16px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.64; }
 .t-nav { font-size: 12px; letter-spacing: -0.02em; color: var(--nav-gray); }
-.t-metadata { font-size: 10px; font-weight: 400; letter-spacing: -0.02em; text-transform: uppercase; }
+.t-metadata { font-size: 12px; font-weight: 400; letter-spacing: -0.02em; text-transform: uppercase; }
 
 /* Layout */
 .container {

@@ -4,26 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafael Mapa | Product Designer</title>
-  <!-- preconnect for Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400&display=swap" rel="stylesheet">
+  <meta name="description" content="Portfólio de Rafael Mapa, product designer focado em interfaces digitais, arquitetura de informação e experiências funcionais.">
+  <!-- Open Graph -->
+  <!-- Twitter -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preload" href="assets/fonts/Onest-Variable-Latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="canonical" href="https://rafaelmapa.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rafaelmapa.com.br/">
+  <meta property="og:title" content="Rafael Mapa | Product Designer">
+  <meta property="og:description" content="Portfólio de Rafael Mapa, product designer focado em interfaces digitais, arquitetura de informação e experiências funcionais.">
+  <meta property="og:image" content="https://rafaelmapa.com.br/assets/home/og-porsche.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rafael Mapa | Product Designer">
+  <meta name="twitter:description" content="Portfólio de Rafael Mapa, product designer focado em interfaces digitais, arquitetura de informação e experiências funcionais.">
+  <meta name="twitter:image" content="https://rafaelmapa.com.br/assets/home/og-porsche.jpg">
 </head>
 <body>
   <div class="container">
     <header>
-      <div id="logo-text" class="pixel-mono" style="font-size:16px; cursor: pointer;" onclick="window.location.href='/'">[ MAPA ]</div>
+      <a href="/" id="logo-text" class="pixel-mono" style="font-size:16px; text-decoration:none; color:inherit;">[ MAPA ]</a>
       <nav class="header-links t-nav pixel-mono">
         <a href="/projetos">projetos</a>
         <div class="dot"></div>
         <a href="/sobre">sobre</a>
       </nav>
       <nav class="header-social t-nav pixel-mono">
-        <a href="assets/curriculo.pdf" target="_blank" class="cv-link">Currículo ↗</a>
-        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" class="linkedin-link">linkedin ↗</a>
+        <a href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer" class="cv-link">Currículo ↗</a>
+        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" rel="noopener noreferrer" class="linkedin-link">linkedin ↗</a>
       </nav>
       <button class="hamburger" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -33,8 +44,8 @@
       <nav class="pixel-mono">
         <a href="/projetos">projetos</a>
         <a href="/sobre">sobre</a>
-        <a href="assets/curriculo.pdf" target="_blank">currículo ↗</a>
-        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank">linkedin ↗</a>
+        <a href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer">currículo ↗</a>
+        <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
       </nav>
     </div>
 
@@ -47,7 +58,7 @@
           <span class="t-card-title" style="color:var(--gray)">Atualmente trabalhando em:</span>
           <!-- inline svg for the sixtema mark -->
           <img src="assets/home/sixtema-mark.svg" alt="" width="16" height="16" style="background:#CBF86C; border-radius:2px; padding:2px; display:inline-block; vertical-align:middle;">
-          <a href="https://sixtema.com.br" target="_blank" style="text-decoration: underline; color:var(--gray); font-size:16px;">Sixtema Marketing</a>
+          <a href="https://sixtema.com.br" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color:var(--gray); font-size:16px;">Sixtema Marketing</a>
         </div>
       </section>
 
@@ -55,7 +66,10 @@
         <div>
           <a href="/porsche" class="card">
             <div class="card-img">
-              <img src="assets/home/porsche.png" alt="Bamaq Porsche - Um sistema visual para cinco páginas">
+              <picture>
+                <source type="image/webp" srcset="assets/home/porsche-1044.webp 1044w, assets/home/porsche-2088.webp 2088w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="assets/home/porsche.png" alt="Bamaq Porsche - Um sistema visual para cinco páginas" width="2088" height="1180">
+              </picture>
             </div>
             <div class="card-footer">
               <h3 class="t-card-title">Um sistema visual para cinco páginas</h3>
@@ -64,7 +78,10 @@
           </a>
           <a href="/lp-volvo" class="card">
             <div class="card-img">
-              <img src="assets/home/volvo.png" alt="Euroville Volvo - 3 páginas, mesma marca, públicos diferentes">
+              <picture>
+                <source type="image/webp" srcset="assets/home/volvo-1044.webp 1044w, assets/home/volvo-2088.webp 2088w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="assets/home/volvo.png" alt="Euroville Volvo - 3 páginas, mesma marca, públicos diferentes" width="2088" height="1600" loading="lazy">
+              </picture>
             </div>
             <div class="card-footer">
               <h3 class="t-card-title">3 páginas, mesma marca,<br>públicos diferentes</h3>
@@ -75,7 +92,10 @@
         <div>
           <a href="/lopez" class="card">
             <div class="card-img">
-              <img src="assets/home/lopez.png" alt="Lopez Bike Shop - Identidade e e-commerce">
+              <picture>
+                <source type="image/webp" srcset="assets/home/lopez-1044.webp 1044w, assets/home/lopez-2088.webp 2088w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="assets/home/lopez.png" alt="Lopez Bike Shop - Identidade e e-commerce" width="2088" height="1600" loading="lazy">
+              </picture>
             </div>
             <div class="card-footer">
               <h3 class="t-card-title">Identidade e e-commerce para uma nova presença digital</h3>
@@ -84,7 +104,10 @@
           </a>
           <a href="/mercedes" class="card">
             <div class="card-img">
-              <img src="assets/home/mercedes.png" alt="Bamaq Mercedes-Benz">
+              <picture>
+                <source type="image/webp" srcset="assets/home/mercedes-1044.webp 1044w, assets/home/mercedes-2088.webp 2088w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="assets/home/mercedes.png" alt="Bamaq Mercedes-Benz" width="2088" height="1180" loading="lazy">
+              </picture>
             </div>
             <div class="card-footer">
               <h3 class="t-card-title">80% menos tempo para produzir anúncios por mês</h3>
@@ -119,7 +142,7 @@
       <div class="footer-top">
         <div class="footer-cta">
           <p>Se interessou pelo trabalho?</p>
-          <p><a href="https://wa.me/5531984040289" target="_blank" style="color: inherit; text-decoration: none;">Me mande uma mensagem!</a></p>
+          <p><a href="https://wa.me/5531984040289" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Me mande uma mensagem!</a></p>
         </div>
         <a href="#top" class="back-to-top pixel-mono">
           <span>↑</span> VOLTAR PARA O TOPO
@@ -132,8 +155,8 @@
           <span id="email-tooltip" style="position: absolute; bottom: 100%; left: 0; margin-bottom: 8px; background: var(--white); color: var(--black); padding: 4px 8px; border-radius: 2px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s; white-space: nowrap;">Email Copiado</span>
         </a>
         <nav class="header-social t-nav pixel-mono">
-          <a href="assets/curriculo.pdf" target="_blank">Currículo ↗</a>
-          <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank">linkedin ↗</a>
+          <a href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer">Currículo ↗</a>
+          <a href="https://www.linkedin.com/in/rafaelmapa/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
         </nav>
       </div>
     </div>

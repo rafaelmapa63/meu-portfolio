@@ -1256,3 +1256,91 @@ footer hr {
   }
 }
 
+
+/* Lightbox das imagens de conteudo dos cases */
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+.lightbox-trigger:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: zoom-out;
+}
+.lightbox-image {
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  cursor: default;
+  transition: opacity 160ms ease;
+}
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.lightbox-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-backdrop {
+    padding: 2vh 2vw;
+  }
+  .lightbox-image {
+    max-width: 96vw;
+    max-height: 84vh;
+  }
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-image {
+    transition: none;
+  }
+}

@@ -149,3 +149,109 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('focusout', stop);
   });
 })();
+
+
+// Lightbox das imagens de conteudo dos cases
+(() => {
+  const scopes = document.querySelectorAll('.case-main, .case-body-wrapper');
+  if (!scopes.length) return;
+
+  const images = [];
+  scopes.forEach(scope => {
+    if (typeof scope.querySelectorAll !== 'function') return;
+    scope.querySelectorAll('img').forEach(img => {
+      if (!img.alt || !img.alt.trim()) return;
+      if (img.closest('video, picture, .case-meta-logos, a, button, header, footer')) return;
+      if (images.indexOf(img) === -1) images.push(img);
+    });
+  });
+  if (!images.length) return;
+
+  let overlay;
+  let overlayImage;
+  let closeButton;
+  let origin = null;
+
+  function build() {
+    overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Imagem ampliada');
+    overlay.hidden = true;
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'lightbox-backdrop';
+
+    overlayImage = document.createElement('img');
+    overlayImage.className = 'lightbox-image';
+    overlayImage.alt = '';
+
+    closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'lightbox-close';
+    closeButton.setAttribute('aria-label', 'Fechar imagem ampliada');
+    closeButton.textContent = '×';
+
+    backdrop.appendChild(overlayImage);
+    overlay.appendChild(backdrop);
+    overlay.appendChild(closeButton);
+    document.body.appendChild(overlay);
+
+    backdrop.addEventListener('click', event => {
+      if (event.target === backdrop) close();
+    });
+    closeButton.addEventListener('click', close);
+    closeButton.addEventListener('keydown', event => {
+      if (event.key === 'Tab') event.preventDefault();
+    });
+  }
+
+  function open(img) {
+    if (!overlay) build();
+    origin = img;
+    overlayImage.src = img.currentSrc || img.src;
+    overlayImage.alt = img.alt;
+    overlay.hidden = false;
+    document.body.classList.add('lightbox-open');
+    closeButton.focus();
+  }
+
+  function close() {
+    if (!overlay || overlay.hidden) return;
+    overlay.hidden = true;
+    overlayImage.removeAttribute('src');
+    overlayImage.alt = '';
+    document.body.classList.remove('lightbox-open');
+    if (origin) origin.focus({ preventScroll: true });
+    origin = null;
+  }
+
+  images.forEach(img => {
+    img.classList.add('lightbox-trigger');
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-haspopup', 'dialog');
+    img.setAttribute('aria-label', `Ampliar imagem: ${img.alt}`);
+
+    img.addEventListener('click', () => open(img));
+    img.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+        event.preventDefault();
+        open(img);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!overlay || overlay.hidden) return;
+    if (event.key === 'Escape') {
+      close();
+      return;
+    }
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+})();
